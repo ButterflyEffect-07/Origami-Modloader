@@ -1,0 +1,156 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/InstalledMods.cs" type="Script" id=1]
+[ext_resource path="res://Scripts/SetDir.cs" type="Script" id=2]
+[ext_resource path="res://Scripts/DEBUGWINDOW.gd" type="Script" id=3]
+
+[sub_resource type="Theme" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 5.0
+margin_right = 1027.0
+margin_bottom = 599.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 4.0
+margin_right = 59.0
+margin_bottom = 18.0
+text = "Origami"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 382.0
+margin_top = 239.0
+margin_right = 1016.0
+margin_bottom = 591.0
+custom_colors/symbol_color = Color( 1, 0.882353, 0.882353, 1 )
+custom_colors/caret_background_color = Color( 0, 0, 0, 1 )
+custom_colors/line_number_color = Color( 0.815686, 0.976471, 1, 1 )
+custom_colors/background_color = Color( 0, 0, 0, 1 )
+custom_colors/number_color = Color( 0.866667, 0.862745, 1, 1 )
+custom_colors/executing_line_color = Color( 0.901961, 1, 0.886275, 1 )
+custom_colors/font_color_readonly = Color( 1, 1, 1, 1 )
+readonly = true
+syntax_highlighting = true
+show_line_numbers = true
+
+[node name="Tree" type="Tree" parent="."]
+margin_left = 10.0
+margin_top = 201.0
+margin_right = 371.0
+margin_bottom = 590.0
+
+[node name="HSeparator" type="HSeparator" parent="."]
+margin_left = 11.0
+margin_top = 12.0
+margin_right = 1018.0
+margin_bottom = 25.0
+
+[node name="MenuButton" type="MenuButton" parent="."]
+margin_left = 12.0
+margin_top = 28.0
+margin_right = 239.0
+margin_bottom = 50.0
+text = "Select Game"
+flat = false
+
+[node name="MenuButton2" type="MenuButton" parent="."]
+margin_left = 245.0
+margin_top = 28.0
+margin_right = 472.0
+margin_bottom = 50.0
+focus_mode = 2
+text = "Select Mod Type"
+flat = false
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = 388.0
+margin_top = 222.0
+margin_right = 626.0
+margin_bottom = 236.0
+
+[node name="LinkButton" type="LinkButton" parent="."]
+margin_left = 966.0
+margin_top = 3.0
+margin_right = 1017.0
+margin_bottom = 22.0
+text = "Github"
+
+[node name="Button" type="Button" parent="."]
+margin_left = 14.0
+margin_top = 168.0
+margin_right = 161.0
+margin_bottom = 190.0
+text = "Installed Mods"
+script = ExtResource( 1 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 120.0
+margin_right = 176.0
+margin_bottom = 135.0
+text = "Enter Paper Lily Directory:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 10.0
+margin_top = 136.0
+margin_right = 410.0
+margin_bottom = 161.0
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
+margin_right = 58.0
+margin_bottom = 25.0
+grow_horizontal = 2
+caret_blink = true
+script = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+margin_left = 62.0
+margin_right = 121.0
+margin_bottom = 25.0
+text = "Browse"
+
+[node name="FileDialog" type="FileDialog" parent="HBoxContainer/Button"]
+margin_left = -315.0
+margin_top = -136.0
+margin_right = 189.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 400, 140 )
+window_title = "Open a Directory"
+mode = 2
+access = 2
+current_dir = "/Users/gideonbonsant/Desktop/Origami-Modloader-main/Origami"
+current_path = "/Users/gideonbonsant/Desktop/Origami-Modloader-main/Origami/"
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 915.0
+margin_top = 107.0
+margin_right = 997.0
+margin_bottom = 127.0
+text = "DEBUG"
+script = ExtResource( 3 )
+
+[node name="WindowDialog" type="WindowDialog" parent="Button2"]
+anchor_left = -5.205
+anchor_top = -3.853
+anchor_right = -5.205
+anchor_bottom = -3.853
+margin_left = -12.19
+margin_top = 15.06
+margin_right = 419.81
+margin_bottom = 178.06
+grow_horizontal = 2
+grow_vertical = 2
+custom_colors/title_color = Color( 1, 0, 0, 1 )
+window_title = "DEBUG CONSOLE"
+resizable = true
+
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
+[connection signal="text_entered" from="HBoxContainer/LineEdit" to="HBoxContainer/LineEdit" method="_on_LineEdit_text_entered"]
+[connection signal="pressed" from="HBoxContainer/Button" to="HBoxContainer/LineEdit" method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_Button2_pressed"]
