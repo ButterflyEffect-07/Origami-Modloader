@@ -1,0 +1,47 @@
+[gd_resource type="Theme" load_steps=13 format=2]
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.145098, 0.152941, 0.282353, 1, 0.231373, 0.231373, 0.290196, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = SubResource( 3 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+
+[sub_resource type="Gradient" id=5]
+colors = PoolColorArray( 0.145098, 0.145098, 0.203922, 1, 0.254902, 0.235294, 0.352941, 1 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = SubResource( 6 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+
+[sub_resource type="Gradient" id=8]
+colors = PoolColorArray( 0.184314, 0.184314, 0.337255, 1, 0.254902, 0.239216, 0.313726, 1 )
+
+[sub_resource type="GradientTexture" id=9]
+gradient = SubResource( 8 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = SubResource( 9 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+
+[sub_resource type="Gradient" id=11]
+colors = PoolColorArray( 0.141176, 0.137255, 0.203922, 1, 0.113725, 0.105882, 0.152941, 1 )
+
+[sub_resource type="GradientTexture" id=12]
+gradient = SubResource( 11 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = SubResource( 12 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+
+[resource]
+Button/styles/normal = SubResource( 4 )
+LineEdit/styles/normal = SubResource( 7 )
+MenuButton/styles/normal = SubResource( 10 )
+Tree/styles/bg = SubResource( 13 )

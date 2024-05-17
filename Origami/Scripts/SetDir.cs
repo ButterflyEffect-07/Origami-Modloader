@@ -36,11 +36,12 @@ private void _on_Button_pressed()
 	
 }
 
-
-}
-
-
 private void _on_FileDialog_dir_selected(String dir)
 {
 	// Replace with function body.
 }
+
+
+}
+
+
