@@ -12,9 +12,8 @@ anchor_bottom = 1.0
 theme = SubResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
-margin_left = 5.0
-margin_right = 1027.0
-margin_bottom = 599.0
+margin_right = 1024.0
+margin_bottom = 600.0
 
 [node name="Label" type="Label" parent="."]
 margin_left = 8.0
@@ -79,7 +78,9 @@ margin_left = 966.0
 margin_top = 3.0
 margin_right = 1017.0
 margin_bottom = 22.0
-text = "Github"
+action_mode = 0
+text = "GitHub"
+underline = 1
 
 [node name="Button" type="Button" parent="."]
 margin_left = 14.0
@@ -94,7 +95,7 @@ margin_left = 10.0
 margin_top = 120.0
 margin_right = 176.0
 margin_bottom = 135.0
-text = "Enter Paper Lily Directory:"
+text = "Paper Lily Directory:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 10.0
@@ -103,31 +104,30 @@ margin_right = 410.0
 margin_bottom = 161.0
 
 [node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
-margin_right = 58.0
+margin_right = 200.0
 margin_bottom = 25.0
 grow_horizontal = 2
 caret_blink = true
 script = ExtResource( 2 )
 
-[node name="Button" type="Button" parent="HBoxContainer"]
-margin_left = 62.0
-margin_right = 121.0
-margin_bottom = 25.0
-text = "Browse"
-
-[node name="FileDialog" type="FileDialog" parent="HBoxContainer/Button"]
-margin_left = -315.0
+[node name="FileDialog" type="FileDialog" parent="HBoxContainer/LineEdit"]
+margin_left = -115.0
 margin_top = -136.0
-margin_right = 189.0
+margin_right = 389.0
 margin_bottom = 175.0
 rect_min_size = Vector2( 400, 140 )
 window_title = "Open a Directory"
 mode = 2
 access = 2
-current_dir = "/Users/gideonbonsant/Desktop/Origami-Modloader-main/Origami"
-current_path = "/Users/gideonbonsant/Desktop/Origami-Modloader-main/Origami/"
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+margin_left = 200.0
+margin_right = 259.0
+margin_bottom = 25.0
+text = "Browse"
 
 [node name="Button2" type="Button" parent="."]
+visible = false
 margin_left = 915.0
 margin_top = 107.0
 margin_right = 997.0
@@ -136,6 +136,7 @@ text = "DEBUG"
 script = ExtResource( 3 )
 
 [node name="WindowDialog" type="WindowDialog" parent="Button2"]
+visible = true
 anchor_left = -5.205
 anchor_top = -3.853
 anchor_right = -5.205
@@ -152,5 +153,6 @@ resizable = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
 [connection signal="text_entered" from="HBoxContainer/LineEdit" to="HBoxContainer/LineEdit" method="_on_LineEdit_text_entered"]
+[connection signal="dir_selected" from="HBoxContainer/LineEdit/FileDialog" to="HBoxContainer/LineEdit" method="_on_FileDialog_dir_selected"]
 [connection signal="pressed" from="HBoxContainer/Button" to="HBoxContainer/LineEdit" method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="Button2" method="_on_Button2_pressed"]
