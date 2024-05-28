@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/BackToMain.cs" type="Script" id=1]
 [ext_resource path="res://Themes/MainTheme.tres" type="Theme" id=2]
+[ext_resource path="res://Scripts/Button2.cs" type="Script" id=3]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.613757, 1 )
@@ -88,4 +89,13 @@ margin_right = 925.0
 margin_bottom = 39.0
 text = "(NOTE: Active mod's INCLUDES the vanilla files)"
 
+[node name="Button2" type="Button" parent="."]
+margin_left = 310.0
+margin_top = 23.0
+margin_right = 461.0
+margin_bottom = 50.0
+text = "Scan Mods Folder"
+script = ExtResource( 3 )
+
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_Button2_pressed"]

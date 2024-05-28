@@ -78,6 +78,16 @@ focus_mode = 2
 text = "Select Mod Type"
 flat = false
 
+[node name="MenuButton3" type="MenuButton" parent="."]
+margin_left = 477.0
+margin_top = 28.0
+margin_right = 704.0
+margin_bottom = 50.0
+focus_mode = 2
+text = "Select OS"
+flat = false
+items = [ "MacOS (NO SUPPORT)", null, 0, false, false, 0, 0, null, "", false, "Windows", null, 0, false, false, 1, 0, null, "", false, "Linux", null, 0, false, false, 2, 0, null, "", false ]
+
 [node name="ProgressBar" type="ProgressBar" parent="."]
 margin_left = 388.0
 margin_top = 222.0
@@ -130,8 +140,6 @@ rect_min_size = Vector2( 400, 140 )
 window_title = "Open a Directory"
 mode = 2
 access = 2
-current_dir = "/Users/gideonbonsant/Desktop/Origami-Modloader-main 2/Origami"
-current_path = "/Users/gideonbonsant/Desktop/Origami-Modloader-main 2/Origami/"
 
 [node name="Button" type="Button" parent="HBoxContainer"]
 margin_left = 52.0
